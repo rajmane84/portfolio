@@ -13,16 +13,11 @@ const Container = ({
   innerClassName,
 }: ContainerProps) => {
   return (
-    <div
-      className={cn(
-        "w-full border-y border-primary/70",
-        outerClassName
-      )}
-    >
+    <div className={cn("border-primary/50 w-full border-y", outerClassName)}>
       <div
         className={cn(
-          "max-w-4xl border-x border-primary/70 w-full mx-auto h-14",
-          innerClassName
+          "border-primary/50 mx-auto min-h-10 w-full max-w-4xl border-x",
+          innerClassName,
         )}
       >
         {children}

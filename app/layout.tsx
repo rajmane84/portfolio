@@ -14,14 +14,15 @@ const geistMono = Geist_Mono({
 });
 
 const roboto = Roboto({
-  variable: '--font-roboto',
+  variable: "--font-roboto",
   subsets: ["latin"],
-  weight: ['400', '500', '600', '700']
-})
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Raj Mane | Full Stack Developer",
-  description: "Portfolio website of Raj Mane, a skilled full stack developer specializing in modern web technologies.",
+  description:
+    "Portfolio website of Raj Mane, a skilled full stack developer specializing in modern web technologies.",
 };
 
 export default function RootLayout({
@@ -31,10 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.variable} antialiased`}
-      >
-      <Navbar />
+      <body className={`${roboto.variable} antialiased`}>
+        <Navbar />
         {children}
       </body>
     </html>

@@ -1,15 +1,17 @@
-'use client';
+"use client";
 
 import { cn } from "@/utils/cn";
 import Container from "./container";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const pathname = usePathname();
   const [portfolioActive, setPortfolioActive] = useState(pathname === "/");
-  const [guestbookActive, setGuestbookActive] = useState(pathname === "/guestbook");
+  const [guestbookActive, setGuestbookActive] = useState(
+    pathname === "/guestbook",
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,15 +25,15 @@ const Navbar = () => {
   return (
     <Container
       outerClassName="fixed h-14 top-0 inset-x-0 z-100"
-      innerClassName="px-4 flex items-center justify-between"
+      innerClassName="px-4 flex items-center justify-between h-full"
     >
       <div className="size-11 rounded-md bg-white" />
-      <div className="h-full flex items-center gap-5">
+      <div className="flex h-full items-center gap-5">
         <Link
           href={"/"}
           className={cn(
-            "cursor-pointer font-semibold tracking-wide text-[15px] transition-all duration-200",
-            portfolioActive ? "text-white scale-105" : "text-neutral-400"
+            "cursor-pointer text-[15px] font-semibold tracking-wide transition-all duration-200",
+            portfolioActive ? "scale-105 text-white" : "text-neutral-400",
           )}
         >
           Portfolio
@@ -39,19 +41,19 @@ const Navbar = () => {
         <Link
           href={"/guestbook"}
           className={cn(
-            "cursor-pointer font-semibold tracking-wide text-[15px] transition-all duration-200",
-            guestbookActive ? "text-white scale-105" : "text-neutral-400"
+            "cursor-pointer text-[15px] font-semibold tracking-wide transition-all duration-200",
+            guestbookActive ? "scale-105 text-white" : "text-neutral-400",
           )}
         >
           Guestbook
         </Link>
         {/* TODO: Add a search bar */}
-        <div className="flex items-center justify-between min-w-23 h-full gap-2">
-          <div className="flex items-center justify-center group hover:bg-neutral-600/35 rounded-lg px-3 py-1.5 transition-all duration-200">
+        <div className="flex h-full min-w-23 items-center justify-between gap-2">
+          <div className="group flex items-center justify-center rounded-lg px-3 py-1.5 transition-all duration-200 hover:bg-neutral-600/35">
             <GithubIcon className="size-5 stroke-neutral-500 group-hover:stroke-white/75" />
           </div>
-          <div className="h-[50%] w-px bg-neutral-700 rounded-full" />
-          <div className="flex items-center justify-center group hover:bg-neutral-600/35 rounded-lg px-3 py-1.5 transition-all duration-100">
+          <div className="h-[50%] w-px rounded-full bg-neutral-700" />
+          <div className="group flex items-center justify-center rounded-lg px-3 py-1.5 transition-all duration-100 hover:bg-neutral-600/35">
             <MoonIcon className="size-5 stroke-neutral-500 group-hover:stroke-white/75" />
           </div>
         </div>
