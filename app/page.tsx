@@ -1,5 +1,6 @@
 import Container from "@/components/container";
 import PatternContainer from "@/components/pattern-container";
+import SkillsSection from "@/components/sections/skills";
 import { cn } from "@/utils/cn";
 import { IconSend } from "@tabler/icons-react";
 import Image from "next/image";
@@ -41,7 +42,7 @@ const Page = () => {
 
             {/* Headline Group */}
             <div className="border-primary/50 border-b py-2">
-              <span className="text-md block px-8 tracking-wide text-neutral-400/75">
+              <span className="text-md block px-8 tracking-wide text-neutral-400/80">
                 Hey, I&apos;m
               </span>
               <h1 className="flex items-center gap-4 px-8 text-2xl font-bold text-white">
@@ -50,7 +51,7 @@ const Page = () => {
                 <span className="font-semibold text-neutral-400">
                   A Full Stack Developer
                 </span>
-                <div className="size-1 -translate-x-1.5 translate-y-2.5 bg-white" />
+                <div className="size-1 -translate-x-2 translate-y-2.5 bg-neutral-400" />
               </h1>
             </div>
 
@@ -78,7 +79,7 @@ const Page = () => {
               <Link
                 href="/contact"
                 className={cn(
-                  "flex cursor-pointer items-center gap-2 rounded-md border bg-white/70 px-3 py-1.5 transition-colors hover:bg-white/80",
+                  "flex cursor-pointer items-center gap-2 rounded-md bg-white/70 px-3 py-1.5 transition-colors hover:bg-white/80",
                 )}
               >
                 <IconSend className="size-5 stroke-black" />
@@ -92,6 +93,9 @@ const Page = () => {
       </Container>
 
       <PatternContainer height="full" />
+
+      {/* Skills */}
+      <SkillsSection />
     </div>
   );
 };
