@@ -5,6 +5,7 @@ import Container from "./container";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
+import ModeToggle from "./mode-toggle";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -27,7 +28,7 @@ const Navbar = () => {
       outerClassName="fixed h-14 top-0 inset-x-0 z-100"
       innerClassName="px-4 flex items-center justify-between h-full"
     >
-      <div className="size-11 rounded-md bg-white" />
+      <div className="size-11 rounded-md dark:bg-white bg-black" />
       <div className="flex h-full items-center gap-5">
         <Link
           href={"/"}
@@ -53,9 +54,7 @@ const Navbar = () => {
             <GithubIcon className="size-5 stroke-neutral-500 group-hover:stroke-white/75" />
           </div>
           <div className="h-[50%] w-px rounded-full bg-neutral-700" />
-          <div className="group flex items-center justify-center rounded-lg px-3 py-1.5 transition-all duration-100 hover:bg-neutral-600/35">
-            <MoonIcon className="size-5 stroke-neutral-500 group-hover:stroke-white/75" />
-          </div>
+          <ModeToggle />
         </div>
       </div>
     </Container>

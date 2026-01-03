@@ -1,6 +1,8 @@
 import Container from "@/components/container";
+import PatternContainer from "@/components/pattern-container";
 import { cn } from "@/utils/cn";
 import { IconSend } from "@tabler/icons-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Page = () => {
@@ -28,7 +30,7 @@ const Page = () => {
           {/* Avatar Side */}
           <div className="border-primary/50 relative flex h-full w-55 shrink-0 items-center justify-center border-r">
             <div className="border-primary/50 relative size-55 rounded-full border p-1">
-              <div className="size-full rounded-full bg-blue-400/15" />
+              <Image src="/Jujutsu-Kaisen.avif" alt="avatar" height={1080} width={1080} className="size-full rounded-full object-cover object-center" />
               <AvailableForWork className="absolute right-[14.5%] bottom-[14.5%] translate-x-1/2 translate-y-1/2" />
             </div>
           </div>
@@ -89,9 +91,7 @@ const Page = () => {
         </div>
       </Container>
 
-      <Container outerClassName="border-t-none bg-[image:repeating-linear-gradient(315deg,_var(--color-neutral-900)_0,_var(--color-neutral-900)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px]">
-        <LinesBackground className="h-full w-full" />
-      </Container>
+      <PatternContainer height="full" />
     </div>
   );
 };
