@@ -25,8 +25,8 @@ const Navbar = () => {
 
   return (
     <Container
-      outerClassName="fixed h-14 top-0 inset-x-0 z-100"
-      innerClassName="px-4 flex items-center justify-between h-full"
+      outerClassName="fixed h-14 top-0 inset-x-0 z-100 bg-background"
+      innerClassName="px-4 flex items-center justify-between h-full bg-background"
     >
       <div className="size-11 rounded-md dark:bg-white bg-black" />
       <div className="flex h-full items-center gap-5">

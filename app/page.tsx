@@ -1,5 +1,6 @@
 import Container from "@/components/container";
 import PatternContainer from "@/components/pattern-container";
+import GithubContributionSection from "@/components/sections/github-contribution";
 import SkillsSection from "@/components/sections/skills";
 import { cn } from "@/utils/cn";
 import { IconSend } from "@tabler/icons-react";
@@ -96,6 +97,10 @@ const Page = () => {
 
       {/* Skills */}
       <SkillsSection />
+
+      <PatternContainer height="full" />
+
+      <GithubContributionSection />
     </div>
   );
 };
