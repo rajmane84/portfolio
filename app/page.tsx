@@ -2,6 +2,7 @@ import Container from "@/components/container";
 import Logo from "@/components/logo";
 import PatternContainer from "@/components/pattern-container";
 import GithubContributionSection from "@/components/sections/github-contribution";
+import ProjectsSection from "@/components/sections/projects-section";
 import SkillsSection from "@/components/sections/skills";
 import { cn } from "@/utils/cn";
 import { IconSend } from "@tabler/icons-react";
@@ -106,6 +107,10 @@ const Page = () => {
       <PatternContainer height="full" />
 
       <GithubContributionSection />
+
+      <PatternContainer height="full" />
+
+      <ProjectsSection />
     </div>
   );
 };
@@ -127,18 +132,6 @@ const DotsBackground = ({
       style={{
         backgroundImage: `radial-gradient(${dotColor} 1px, transparent 1px)`,
         backgroundSize: `${size} ${size}`,
-      }}
-    />
-  );
-};
-
-const LinesBackground = ({ className }: { className?: string }) => {
-  return (
-    <div
-      className={cn(className)}
-      style={{
-        backgroundImage: `repeating-linear-gradient(315deg, var(--color-neutral-900) 0, var(--color-neutral-900) 1px, transparent 0, transparent 50%)`,
-        backgroundSize: "10px 10px",
       }}
     />
   );

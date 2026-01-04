@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
       },
     });
 
-    let svg: string = response.data;
+    const svg: string = response.data;
 
     return new NextResponse(svg, {
       status: 200,
