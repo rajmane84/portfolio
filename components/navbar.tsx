@@ -5,7 +5,7 @@ import Container from "./container";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import ModeToggle from "./mode-toggle";
+import Logo from "./logo";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -28,7 +28,9 @@ const Navbar = () => {
       outerClassName="fixed h-14 top-0 inset-x-0 z-100 bg-background"
       innerClassName="px-4 flex items-center justify-between h-full bg-background"
     >
-      <div className="size-11 rounded-md dark:bg-white bg-black" />
+      <Link href={"/"}>
+        <Logo className="size-16 stroke-white" />
+      </Link>
       <div className="flex h-full items-center gap-5">
         <Link
           href={"/"}
@@ -49,12 +51,13 @@ const Navbar = () => {
           Guestbook
         </Link>
         {/* TODO: Add a search bar */}
-        <div className="flex h-full min-w-23 items-center justify-between gap-2">
+        {/* min-w-23 */}
+        <div className="flex h-full items-center justify-between gap-2">
           <div className="group flex items-center justify-center rounded-lg px-3 py-1.5 transition-all duration-200 hover:bg-neutral-600/35">
             <GithubIcon className="size-5 stroke-neutral-500 group-hover:stroke-white/75" />
           </div>
-          <div className="h-[50%] w-px rounded-full bg-neutral-700" />
-          <ModeToggle />
+          {/* <div className="h-[50%] w-px rounded-full bg-neutral-700" /> */}
+          {/* <ModeToggle /> */}
         </div>
       </div>
     </Container>

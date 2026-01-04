@@ -11,10 +11,10 @@ const Heading = ({
 }) => {
   return (
     <div className={cn(className)}>
-      <h1 className="text-2xl font-bold text-black dark:text-white">
+      <h1 className="text-2xl font-bold text-white">
         {heading}
       </h1>
-      <p className="text-xs font-medium text-neutral-600 dark:text-neutral-400">
+      <p className="text-xs font-medium text-neutral-400">
         {description}
       </p>
     </div>

@@ -35,7 +35,7 @@ const skills: Skill[] = [
     image: "/stack/tailwindcss-logo.png",
     link: "https://tailwindcss.com",
   },
-  { name: "Shadcn/ui", image: "/stack/shadcn-logo-light.png", link: "https://ui.shadcn.com" }, // Will be set based on theme
+  { name: "Shadcn/ui", image: "/stack/shadcn-logo-light.png", link: "https://ui.shadcn.com" },
   {
     name: "Redux",
     image: "/stack/redux-logo.png",

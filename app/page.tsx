@@ -1,4 +1,5 @@
 import Container from "@/components/container";
+import Logo from "@/components/logo";
 import PatternContainer from "@/components/pattern-container";
 import GithubContributionSection from "@/components/sections/github-contribution";
 import SkillsSection from "@/components/sections/skills";
@@ -16,10 +17,8 @@ const Page = () => {
         innerClassName="h-full"
       >
         <div className="relative flex h-full w-full items-center justify-center">
-          <DotsBackground className="mask-[linear-gradient(to_bottom,transparent,black_20%,black_80%,transparent)]" />
-          <h1 className="font-sans text-3xl font-bold tracking-tight">
-            Raj Mane
-          </h1>
+          <DotsBackground className="mask-[linear-gradient(to_bottom,transparent,black_25%,black_80%,transparent)]" />
+          <Logo className="stroke-white size-32" />
         </div>
       </Container>
 
@@ -32,7 +31,13 @@ const Page = () => {
           {/* Avatar Side */}
           <div className="border-primary/50 relative flex h-full w-55 shrink-0 items-center justify-center border-r">
             <div className="border-primary/50 relative size-55 rounded-full border p-1">
-              <Image src="/Jujutsu-Kaisen.avif" alt="avatar" height={1080} width={1080} className="size-full rounded-full object-cover object-center" />
+              <Image
+                src="/Jujutsu-Kaisen.avif"
+                alt="avatar"
+                height={1080}
+                width={1080}
+                className="size-full rounded-full object-cover object-center"
+              />
               <AvailableForWork className="absolute right-[14.5%] bottom-[14.5%] translate-x-1/2 translate-y-1/2" />
             </div>
           </div>
