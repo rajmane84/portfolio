@@ -1,6 +1,9 @@
 import Container from "@/components/container";
 import Logo from "@/components/logo";
 import PatternContainer from "@/components/pattern-container";
+import ConnectMe from "@/components/sections/connect-me";
+import EducationSection from "@/components/sections/education-section";
+import ExperienceSection from "@/components/sections/experience-section";
 import GithubContributionSection from "@/components/sections/github-contribution";
 import ProjectsSection from "@/components/sections/projects-section";
 import SkillsSection from "@/components/sections/skills";
@@ -111,6 +114,19 @@ const Page = () => {
       <PatternContainer height="full" />
 
       <ProjectsSection />
+
+      <PatternContainer height="full" />
+
+      <ExperienceSection />
+
+      <PatternContainer height="full" />
+
+      <EducationSection />
+
+      <PatternContainer height="full" />
+
+      <ConnectMe />
+
     </div>
   );
 };
