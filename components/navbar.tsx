@@ -6,6 +6,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Logo from "./logo";
+import {
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+  motion,
+  useSpring,
+} from "motion/react";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -13,6 +20,8 @@ const Navbar = () => {
   const [guestbookActive, setGuestbookActive] = useState(
     pathname === "/guestbook",
   );
+
+  const { scrollY } = useScroll();
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,14 +32,27 @@ const Navbar = () => {
     return () => clearTimeout(timer);
   }, [pathname]);
 
+  const rawOpacity = useTransform(scrollY, [170, 190], [0, 1]);
+
+  const logoOpacity = useSpring(rawOpacity, { stiffness: 90, damping: 25 });
+  const logoScale = useTransform(scrollY, [140, 200], [0.2, 1]);
+
   return (
     <Container
       outerClassName="fixed h-14 top-0 inset-x-0 z-100 bg-background"
       innerClassName="px-4 flex items-center justify-between h-full bg-background"
     >
-      <Link href={"/"}>
-        <Logo className="size-16 stroke-white" />
-      </Link>
+      <motion.div
+        style={{
+          opacity: logoOpacity,
+          scale: logoScale
+        }}
+        className="flex items-center"
+      >
+        <Link href={"/"}>
+          <Logo className="size-16 stroke-white" />
+        </Link>
+      </motion.div>
       <div className="flex h-full items-center gap-5">
         <Link
           href={"/"}

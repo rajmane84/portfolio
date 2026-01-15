@@ -1,29 +1,41 @@
 import { cn } from "@/utils/cn";
-import React from "react";
+import React, { forwardRef } from "react";
 
-interface ContainerProps {
+interface ContainerProps extends React.ComponentPropsWithoutRef<"div"> {
   children: React.ReactNode;
   outerClassName?: string;
   innerClassName?: string;
+  as?: React.ElementType;
 }
 
-const Container = ({
-  children,
-  outerClassName,
-  innerClassName,
-}: ContainerProps) => {
-  return (
-    <div className={cn("border-primary/50 w-full border-y", outerClassName)}>
-      <div
-        className={cn(
-          "border-primary/50 mx-auto min-h-10 w-full max-w-4xl border-x",
-          innerClassName,
-        )}
+const Container = forwardRef<HTMLDivElement, ContainerProps>(
+  (
+    {
+      children,
+      outerClassName,
+      innerClassName,
+      as: Component = "div",
+      ...props
+    },
+    ref,
+  ) => {
+    return (
+      <Component
+        ref={ref}
+        className={cn("w-full border-y border-neutral-800", outerClassName)}
+        {...props}
       >
-        {children}
-      </div>
-    </div>
-  );
-};
+        <div
+          className={cn(
+            "mx-auto min-h-10 w-full max-w-4xl border-x border-neutral-800",
+            innerClassName,
+          )}
+        >
+          {children}
+        </div>
+      </Component>
+    );
+  },
+);
 
 export default Container;
