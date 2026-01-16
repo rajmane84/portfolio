@@ -7,18 +7,11 @@ import { IconChevronDownLeft, IconCode, IconBrush } from "@tabler/icons-react";
 const ExperienceSection = () => {
   const myRoles: Role[] = [
     {
-      title: "Senior Frontend Developer",
-      duration: "10.2022 — Present",
-      type: "Full-time",
+      title: "Full Stack Developer Intern",
+      duration: "June 2025 — July 2025",
+      type: "Intern",
       icon: "code",
-      skills: ["TypeScript", "Next.js", "MobX", "Tailwind"],
-    },
-    {
-      title: "Senior Frontend Developer",
-      duration: "10.2022 — Present",
-      type: "Full-time",
-      icon: "code",
-      skills: ["TypeScript", "Next.js", "MobX", "Tailwind"],
+      skills: ["TypeScript", "ExpressJs", "Redis", "Prisma ORM"],
     },
   ];
 
@@ -38,7 +31,12 @@ const ExperienceSection = () => {
           </div>
           <div className="col-span-3">
             <div className="flex h-full w-full flex-col px-4 py-2">
-              <Experience company="Simplamo Enterprise JSC" roles={myRoles} />
+              <Experience
+                company="Urja Talents"
+                logo="/logo/urja-talents.png"
+                roles={myRoles}
+                isWorking={false}
+              />
             </div>
           </div>
         </div>
@@ -61,27 +59,25 @@ interface ExperienceProps {
   company: string;
   logo?: string;
   roles: Role[];
+  isWorking?: boolean;
 }
 
-const Experience = ({ company, logo, roles }: ExperienceProps) => {
+const Experience = ({
+  company,
+  logo,
+  roles,
+  isWorking = false,
+}: ExperienceProps) => {
   return (
     <div className="group flex flex-col gap-6">
-      {/* Company Header */}
+
+      {/* Header */}
       <div className="flex items-center gap-3">
-        <div className="relative flex h-6 w-6 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-neutral-800">
-          {logo ? (
-            <Image src={logo} alt={company} fill className="object-cover" />
-          ) : (
-            <div className="flex h-full w-full items-center justify-center bg-orange-600 text-[10px] font-bold text-white">
-              {company.charAt(0)}
-            </div>
-          )}
-        </div>
+        <CompanyLogo company={company} logo={logo} />
         <h3 className="text-lg font-bold tracking-tight text-neutral-100">
           {company}
         </h3>
-        {/* Status Indicator Dot */}
-        <div className="h-2 w-2 rounded-full bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
+        <StatusIndicator isWorking={isWorking} />
       </div>
 
       {/* Timeline Section */}
@@ -127,5 +123,42 @@ const Experience = ({ company, logo, roles }: ExperienceProps) => {
         ))}
       </div>
     </div>
+  );
+};
+
+const CompanyLogo = ({
+  logo,
+  company,
+}: {
+  logo: string | undefined;
+  company: string;
+}) => {
+  return (
+    <div className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-neutral-800">
+      {logo ? (
+        <Image
+          src={logo}
+          alt={company}
+          fill
+          className="object-cover object-center"
+        />
+      ) : (
+        <div className="flex h-full w-full items-center justify-center bg-orange-600 text-[10px] font-bold text-white">
+          {company.charAt(0)}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const StatusIndicator = ({ isWorking }: { isWorking: boolean }) => {
+  return (
+    <div
+      className={`h-2 w-2 rounded-full transition-all duration-300 ${
+        isWorking
+          ? "animate-pulse bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.6)]"
+          : "bg-gray-400 shadow-none"
+      }`}
+    />
   );
 };

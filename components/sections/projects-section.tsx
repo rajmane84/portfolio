@@ -21,7 +21,7 @@ const PROJECTS_DATA = [
     ],
     links: [
       {
-        href: "https://github.com/rajmane84/hexatalk",
+        href: "https://github.com/rajmane84/hexatalk-backend",
         icon: IconCode,
         label: "Source Code",
       },
@@ -40,7 +40,7 @@ const PROJECTS_DATA = [
     ],
     links: [
       {
-        href: "https://github.com/rajmane84/algocode-backend",
+        href: "https://github.com/rajmane84/AlgoCode_Backend",
         icon: IconCode,
         label: "Source Code",
       },

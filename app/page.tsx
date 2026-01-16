@@ -7,6 +7,7 @@ import ExperienceSection from "@/components/sections/experience-section";
 import GithubContributionSection from "@/components/sections/github-contribution";
 import ProjectsSection from "@/components/sections/projects-section";
 import SkillsSection from "@/components/sections/skills";
+import UnderConstructionModal from "@/components/modal/under-construction";
 import { cn } from "@/utils/cn";
 import { IconSend } from "@tabler/icons-react";
 import Image from "next/image";
@@ -15,6 +16,9 @@ import Link from "next/link";
 const Page = () => {
   return (
     <div className="flex flex-col pt-14">
+      
+      <UnderConstructionModal />
+
       {/* Header Section */}
       <Container
         outerClassName="border-t-0 min-h-64 h-64"
