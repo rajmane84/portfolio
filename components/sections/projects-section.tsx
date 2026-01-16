@@ -10,36 +10,44 @@ import { Project } from "../project";
 
 const PROJECTS_DATA = [
   {
-    title: "AlgoCode",
+    title: "HexaTalk",
     description:
-      "A comprehensive educational suite designed to help developers visualize complex data structures and algorithms. Featuring real-time step-through execution, interactive tree/graph builders, and a side-by-side code editor supporting multiple languages, it bridges the gap between theoretical computer science and practical implementation.",
+      "A scalable real-time chat backend supporting one-to-one and group messaging with reliable delivery guarantees. Built using WebSockets with offline message persistence and automatic sync on reconnect. The system is containerized with Docker and Docker Compose, includes CI pipelines for automated builds, and follows a clean modular architecture for long-term scalability.",
     tags: [
-      { name: "React", imagePath: "/stack/react-logo.png" },
-      { name: "TypeScript", imagePath: "/stack/typescript-logo.png" },
-      { name: "Tailwind", imagePath: "/stack/tailwindcss-logo.png" },
+      { name: "Node.js", imagePath: "/stack/nodejs-logo.png" },
+      { name: "Express", imagePath: "/stack/express.js-logo.png" },
+      { name: "MongoDB", imagePath: "/stack/mongo-logo.png" },
+      { name: "Docker", imagePath: "/stack/docker-logo.png" },
     ],
     links: [
-      { href: "https://algocode.dev", icon: IconExternalLink, label: "Live Demo" },
-      { href: "https://youtube.com/watch?v=demo", icon: IconPlayerPlay, label: "Video Demo" },
-      { href: "https://github.com/username/algocode", icon: IconCode, label: "Source Code" },
+      {
+        href: "https://github.com/rajmane84/hexatalk",
+        icon: IconCode,
+        label: "Source Code",
+      },
     ],
   },
   {
-    title: "DevFlow",
+    title: "AlgoCode",
     description:
-      "A high-performance project management dashboard optimized for engineering teams. It integrates directly with GitHub and GitLab APIs to automate sprint tracking and pull request workflows. Built with a focus on speed, it leverages Bun.js for lightning-fast server-side rendering and PostgreSQL for robust data integrity in high-concurrency environments.",
+      "A LeetCode-style coding platform backend designed to evaluate and validate algorithmic submissions at scale. It supports multi-language code execution via Judge0, uses Redis for caching and background queue management, and PostgreSQL with Prisma ORM for strong data integrity. The service is containerized with Docker and built using a modular, service-based architecture.",
     tags: [
-      { name: "Bun.js", imagePath: "/stack/bun-logo.png" },
       { name: "Node.js", imagePath: "/stack/nodejs-logo.png" },
       { name: "PostgreSQL", imagePath: "/stack/postgres-sql-logo.png" },
+      { name: "Prisma", imagePath: "/stack/prisma-logo.png" },
+      { name: "Redis", imagePath: "/stack/redis-logo.png" },
+      { name: "Docker", imagePath: "/stack/docker-logo.png" },
     ],
     links: [
-      { href: "https://devflow.app", icon: IconExternalLink, label: "Live Demo" },
-      { href: "https://vimeo.com/demo", icon: IconPlayerPlay, label: "Video Demo" },
-      { href: "https://github.com/username/devflow", icon: IconCode, label: "Source Code" },
+      {
+        href: "https://github.com/rajmane84/algocode-backend",
+        icon: IconCode,
+        label: "Source Code",
+      },
     ],
   },
 ];
+
 
 const ProjectsSection = () => {
   return (

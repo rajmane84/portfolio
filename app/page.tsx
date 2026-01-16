@@ -76,7 +76,9 @@ const Page = () => {
             {/* Action Buttons */}
             <div className="border-primary/70 flex w-full items-center gap-4 border-t px-8 py-2">
               <Link
-                href="/resume"
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
                   "border-primary/50 bg-primary/25 hover:bg-primary/35 flex cursor-pointer items-center gap-2 rounded-md border px-3 py-1.5 transition-colors",
                   "shadow-[inset_0_1px_1px_rgba(0,0,0,0.6)] shadow-neutral-400",

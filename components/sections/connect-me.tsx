@@ -3,6 +3,8 @@ import Heading from "../heading";
 import Image from "next/image";
 import { IconArrowUpRight } from "@tabler/icons-react";
 import Link from "next/link";
+import { cn } from "@/utils/cn";
+import React from "react";
 
 const CONNECT_DATA = [
   {
@@ -14,9 +16,9 @@ const CONNECT_DATA = [
     },
     right: {
       label: "LinkedIn",
-      username: "@rajmane",
+      username: "@rajmane84",
       imageSrc: "/logo/linkedin.png",
-      href: "https://www.linkedin.com/in/rajmane84/",
+      href: "https://www.linkedin.com/in/rajmane84",
     },
     hasBottomBorder: true,
   },
@@ -49,17 +51,30 @@ const ConnectMe = () => {
       <Container>
         <div className="flex w-full flex-col">
           {CONNECT_DATA.map((row, index) => (
-            <div
-              key={index}
-              className={`flex items-center overflow-hidden ${row.hasBottomBorder ? "border-primary border-b" : ""}`}
-            >
-              <ConnectComponent {...row.left} borderSide="border-r" />
+            <React.Fragment key={index}>
+              <div
+                className={`flex items-center overflow-hidden ${row.hasBottomBorder ? "border-primary border-b" : ""}`}
+              >
+                <ConnectComponent {...row.left} borderSide="border-r" />
 
-              {/* Vacuum Div */}
-              <div className="mx-4 h-px flex-1 bg-neutral-800" />
+                <div
+                  className={cn(
+                    "flex-1 self-stretch",
+                    "bg-[repeating-linear-gradient(315deg,var(--color-neutral-900)_0,var(--color-neutral-700)_1px,transparent_0,transparent_50%)]",
+                    "bg-size-[10px_10px]",
+                  )}
+                />
 
-              <ConnectComponent {...row.right} borderSide="border-l" />
-            </div>
+                <ConnectComponent {...row.right} borderSide="border-l" />
+              </div>
+              <div
+                className={cn(
+                  "h-8 w-full",
+                  "bg-[repeating-linear-gradient(315deg,var(--color-neutral-900)_0,var(--color-neutral-700)_1px,transparent_0,transparent_50%)]",
+                  "bg-size-[10px_10px]",
+                )}
+              ></div>
+            </React.Fragment>
           ))}
         </div>
       </Container>
@@ -87,7 +102,13 @@ const ConnectComponent = ({
   return (
     <Link
       href={href}
-      className={`group border-primary flex w-full max-w-md cursor-pointer items-center justify-between bg-transparent p-4 transition-colors hover:bg-neutral-700/5 ${borderSide}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn(
+        "group border-primary flex w-full max-w-108 cursor-pointer items-center justify-between bg-transparent p-4 transition-colors",
+        "hover:bg-neutral-700/5",
+        borderSide,
+      )}
     >
       <div className="flex items-center gap-5 overflow-hidden">
         <div className="size-12 shrink-0 overflow-hidden rounded-2xl border-2 border-neutral-800 md:size-16">
@@ -99,6 +120,7 @@ const ConnectComponent = ({
             className="size-full object-cover object-center"
           />
         </div>
+
         <div className="flex flex-col truncate select-none">
           <h1 className="truncate text-base font-semibold text-white group-hover:underline md:text-lg">
             {label}
@@ -108,6 +130,7 @@ const ConnectComponent = ({
           </span>
         </div>
       </div>
+
       <IconArrowUpRight className="ml-2 size-5 shrink-0 stroke-neutral-300/50" />
     </Link>
   );
